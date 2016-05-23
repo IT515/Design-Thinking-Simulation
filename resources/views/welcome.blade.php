@@ -4,6 +4,8 @@
 		
 		<link href='//fonts.googleapis.com/css?family=Lato:100' rel='stylesheet' type='text/css'>
 
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
 		<style>
 			body {
 				margin: 0;
@@ -42,6 +44,8 @@
 			<div class="content">
 				<div class="title">Laravel 5</div>
 				<div class="quote">{{ Inspiring::quote() }}</div>
+				<a href="/auth/login">Login</a>
+				<a href="/auth/register">Register</a>
 			</div>
 		</div>
 	</body>

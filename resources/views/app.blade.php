@@ -52,8 +52,16 @@
 			</div>
 		</div>
 	</nav>
+	<div class="container-fluid">
+		<div class="col-lg-2 col-md-3 col-sm-4">
+			@include('leftMenu')
+		</div>
+		<div class="col-lg-10 col-md-9 col-sm-8">
+			@yield('content')
+		</div>
+	</div>
 
-	@yield('content')
+
 
 	<!-- Scripts -->
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
