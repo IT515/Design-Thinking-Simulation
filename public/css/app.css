@@ -3888,7 +3888,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar-brand {
   float: left;
-  padding: 90px 15px;
+  padding: 25px 25px;
   font-size: 18px;
   line-height: 20px;
   height: 200px;
@@ -6211,9 +6211,8 @@ label,
 .checkbox label {
   font-weight: 300;
 }
-.navbar-nav > li > a {
-  top: 70px;
-  margin-left: 180px;
+#PDCLogo {
+  height: 150px;
 }
 
 /*# sourceMappingURL=app.css.map */
