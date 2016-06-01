@@ -3,5 +3,8 @@
   "devDependencies": {
     "gulp": "^3.8.8",
     "laravel-elixir": "*"
+  },
+  "dependencies": {
+    "hover.css": "^2.0.2"
   }
 }

@@ -14,6 +14,9 @@
         <div class="panel-heading">Progress</div>
         <div class="panel-body">
             This is the panel Body
+            <div class="btn hvr-grow">
+                buttons
+            </div>
         </div>
     </div>
 </div>
