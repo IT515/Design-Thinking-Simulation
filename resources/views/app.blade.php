@@ -34,6 +34,8 @@
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
 					<li><a href="{{ url('/') }}">Home</a></li>
+					<li><a href="{{ url('/mediacontent') }}">Media</a></li>
+
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right">
@@ -53,11 +55,13 @@
 		</div>
 	</nav>
 	<div class="container-fluid">
-		<div class="col-lg-2 col-md-3 col-sm-4">
-			@include('leftMenu')
-		</div>
-		<div class="col-lg-10 col-md-9 col-sm-8">
-			@yield('content')
+		<div class="row">
+			<div class="col-lg-2 col-md-3 col-sm-4">
+				@include('leftMenu')
+			</div>
+			<div class="col-lg-10 col-md-9 col-sm-8">
+				@yield('content')
+			</div>
 		</div>
 	</div>
 
