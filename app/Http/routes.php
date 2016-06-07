@@ -15,11 +15,9 @@ Route::get('/', 'WelcomeController@index');
 
 Route::get('home', 'HomeController@index');
 
-
 Route::group(['middleware' => 'auth'], function()
 {
 	// Only authenticated users may enter...
-
 	Route::resource('interview', 'InterviewController');
 });
 

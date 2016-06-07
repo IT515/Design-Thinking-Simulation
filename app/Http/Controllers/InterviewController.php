@@ -1,5 +1,7 @@
 <?php namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -14,7 +16,11 @@ class InterviewController extends Controller {
 	 */
 	public function index()
 	{
-		return view('interview');
+		$current_day = Auth::user()->currentChapter;
+
+		$charVideos = $users = DB::table('characterVideo')->where('chapter', '=', $current_day)->get();
+		//dd($charVideos);
+		return view('interview', compact('charVideos'));
 	}
 
 	/**
