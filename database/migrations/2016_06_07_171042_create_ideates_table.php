@@ -1,0 +1,38 @@
+<?php
+
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class CreateIdeatesTable extends Migration {
+
+	/**
+	 * Run the migrations.
+	 *
+	 * @return void
+	 */
+	public function up()
+	{
+		Schema::create('ideates', function(Blueprint $table)
+		{
+			$table->increments('id');
+			$table->integer('userId');
+			$table->integer('groupId');
+			$table->integer('projectId');
+			$table->text('thought');
+			$table->string('title');
+			$table->string('image');
+			$table->timestamps();
+		});
+	}
+
+	/**
+	 * Reverse the migrations.
+	 *
+	 * @return void
+	 */
+	public function down()
+	{
+		Schema::drop('ideates');
+	}
+
+}
