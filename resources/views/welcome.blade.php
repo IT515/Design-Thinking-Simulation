@@ -47,7 +47,7 @@
 		<div class="container">
 			<div class="content">
 				<div class="title">Laravel 5</div>
-				<div class="quote">{{ Inspiring::quote() }}</div>
+				<!-- <div class="quote">{{ Inspiring::quote() }}</div> -->
 
 				<!-- Button trigger modal -->
 				<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#LoginModal">
@@ -182,24 +182,24 @@
     	if (scrollTop < 100) {
     	    $('.content').stop().animate({margin:"10%"});
     	    $('img').stop().animate({width:"100%"});
-    	    $('header').stop().animate({height: "682px"});  
+    	    $('header').stop().animate({height: "682px"});
     	    //$('header').removeClass("navbar-fixed-top");
     	}
     	else if (scrollTop > 100 && scrollTop < 150) {
     	    $('.content').stop().animate({margin:"-2.27%"});
-    	    $('img').stop().animate({width:"50%"});   
-    	    $('header').stop().animate({height: "341px"});  
+    	    $('img').stop().animate({width:"50%"});
+    	    $('header').stop().animate({height: "341px"});
     	    //$('header').removeClass("navbar-fixed-top");
     	}
     	else if (scrollTop > 150) {
     	    $('.content').stop().animate({margin:"10%"});
-    	    $('img').stop().animate({width:"33.33%"});   
+    	    $('img').stop().animate({width:"33.33%"});
     	    $('header').stop().animate({height: "200px"});
     	    //$('header').addClass("navbar-fixed-top");
     	}
 });
 	</script>
-</head>
+<!-- </head>
 <body>
 	<header>
 		<div class="menu">
@@ -209,7 +209,7 @@
 				<div id="separator"> / </div>
 				<a href="/auth/register">Register</a>
 			</ul>
-		</div>	
+		</div>
 		<div class="container">
 			<div class="content">
 				<div class="title">
@@ -252,5 +252,5 @@
 			</div>
 		</div>
 	</div>
-</body>
+</body> -->
 </html>
