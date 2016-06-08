@@ -34,13 +34,10 @@
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
 					<li><a href="{{ url('/') }}">Home</a></li>
-<<<<<<< HEAD
 					<li><a href="#">Interview</a></li>
 					<li><a href="#">Gallery</a></li>
-=======
 					<li><a href="{{ url('/mediacontent') }}">Media</a></li>
 
->>>>>>> 6e93e49d7859145304ccf59a68663ce2c57c92b1
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right">
