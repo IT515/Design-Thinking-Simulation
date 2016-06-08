@@ -1,28 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ba1cbc33-9e33-45ed-aeea-14d0be3cf597" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/composer.phar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/cabin.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/cake.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/circus.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/game.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/safe.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/submarine.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Controllers/ImageController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Controllers/MediaContentController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/mediacontent.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/2016_06_01_155135_create_mediacontents_table.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/2016_06_06_162616_add_description_to_mediacontents_table.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/mediacontent.blade.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.env.example" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Design-Thinking-Simulation.iml" afterPath="$PROJECT_DIR$/.idea/Design-Thinking-Simulation.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gulpfile.js" afterPath="$PROJECT_DIR$/gulpfile.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/less/app.less" afterPath="$PROJECT_DIR$/resources/assets/less/app.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/app.blade.php" afterPath="$PROJECT_DIR$/resources/views/app.blade.php" />
-    </list>
+    <list default="true" id="ba1cbc33-9e33-45ed-aeea-14d0be3cf597" name="Default" comment="" />
     <ignored path="Design-Thinking-Simulation.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -105,7 +84,7 @@
                 <state vertical-scroll-proportion="0.0">
                   <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
                   <folding>
-                    <marker date="1465399950000" expanded="true" signature="2489:2497" placeholder="..." />
+                    <marker date="1465400636000" expanded="true" signature="2489:2497" placeholder="..." />
                   </folding>
                 </state>
               </provider>
@@ -130,8 +109,8 @@
           <file leaf-file-name="app.less" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/resources/assets/less/app.less">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="5.910138">
-                  <caret line="171" column="0" selection-start-line="171" selection-start-column="0" selection-end-line="171" selection-end-column="0" />
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -779,7 +758,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
           <folding>
-            <marker date="1465399950000" expanded="true" signature="2489:2497" placeholder="..." />
+            <marker date="1465400636000" expanded="true" signature="2489:2497" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -830,8 +809,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/assets/less/app.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="5.910138">
-          <caret line="171" column="0" selection-start-line="171" selection-start-column="0" selection-end-line="171" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
