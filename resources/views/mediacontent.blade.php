@@ -25,8 +25,8 @@
                 </div>
             @endforeach
         </div>  
- <!-- Form -->
 
+ <!-- Add Media Form -->
         <div class="row">
         <form class="form-horizontal" role="form" method="post" action="/mediacontent">
             <div class="form-group">
@@ -67,34 +67,42 @@
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="modal-body">
-                            <h2>Media one</h2>
+                            <h2>Media {{$media->id}}</h2>
                             <hr class="star-primary">
                             <img src="{{asset('images/cabin.png')}}" class="img-responsive img-centered" alt="">
-                            <a href="https://americancustomcrawlers.com">Test test test</a><p>Just a bunch of text</p>
+                            <a href="#">Test</a><p>Just a bunch of text</p>
                             <ul class="list-inline item-details">
                                 <li>Medai ID:
                                     <strong>{{$media->id}}</strong>
                                 </li>
-                                <li>Date:
-                                    <strong>April 2016</strong>
+                                <li>Description:
+                                    <strong>{{$media->description}}</strong>
                                 </li>
-                                <li>Service Provided:
-                                    <strong>Web Master</strong>
-                                </li>
+                                
                             </ul>
-                            <form class="form-horizontal" role="form" method="DELETE" action="mediacontent/{{$media->id}}">
+                            <!-- Form used to edit content -->
+                             <form class="form-horizontal" role="form" method="POST" action="mediacontent/{{$media->id}}/edit">
+                                <div class="form-group">
+                                        <div class="col-sm-10">
+                                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                            <input type="hidden" name="_method" value="PATCH">
+                                            <input name="description" class="form-control" id="description" placeholder="please describe something" >
+                                            <button type="submit" class="btn btn-default">Edit</button>
+                                        </div>
+                                </div>
+                            </form>
+
+                            <!-- Form used to delete content -->
+                            <form class="form-horizontal" role="form" method="POST" action="mediacontent/{{$media->id}}">
                                 <div class="form-group">
                                         <div class="col-sm-10">
                                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                             <input type="hidden" name="_method" value="DELETE">
+                                            <button type="submit" class="btn btn-default">Delete</button>
                                         </div>
                                 </div>
-                                <div class="form-group"> 
-                                    <div class="col-sm-offset-2 col-sm-10">
-                                        <button type="submit" class="btn btn-default">Delete</button>
-                                    </div>
-                                </div>
                             </form>
+                            
                             <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
                         </div>
                     </div>

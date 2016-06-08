@@ -1,13 +1,13 @@
 <?php namespace App\Http\Controllers;
 
-use App\mediacontent;
-
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
-class MediaContentController extends Controller {
+class InterviewController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
@@ -16,11 +16,11 @@ class MediaContentController extends Controller {
 	 */
 	public function index()
 	{
+		$current_day = Auth::user()->currentChapter;
 
-		$MediaContents = mediacontent::get()->all();
-
-
-		return view ('mediacontent', compact('MediaContents'));
+		$charVideos = $users = DB::table('characterVideo')->where('chapter', '=', $current_day)->get();
+		//dd($charVideos);
+		return view('interview', compact('charVideos'));
 	}
 
 	/**
@@ -30,12 +30,7 @@ class MediaContentController extends Controller {
 	 */
 	public function create()
 	{
-		//mediacontent/create
-
-		
-
-		return 'create specific media';
-
+		//
 	}
 
 	/**
@@ -43,18 +38,9 @@ class MediaContentController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store(Request $request)
+	public function store()
 	{
-		//  
-
-		$newMedia = new mediacontent([
-			'description' => $request ->get('description')
-
-			]);
-
-		$newMedia->save();
-
-		return redirect('mediacontent');
+		//
 	}
 
 	/**
@@ -65,8 +51,7 @@ class MediaContentController extends Controller {
 	 */
 	public function show($id)
 	{
-		// GET -> /questions/id
-		return 'show specific media1111' ;
+		//
 	}
 
 	/**
@@ -77,11 +62,7 @@ class MediaContentController extends Controller {
 	 */
 	public function edit($id)
 	{
-		//// GET -> /images/id/edit
-		$MediaEdit = mediacontent::findorfail($id);
-
-
-		return view('mediacontent');
+		//
 	}
 
 	/**
@@ -92,10 +73,7 @@ class MediaContentController extends Controller {
 	 */
 	public function update($id)
 	{
-		// PUT/PATCH /images/id
-
-		echo mediacontent::find($id)->description;
-		return 'show specific media to update';
+		//
 	}
 
 	/**
@@ -106,10 +84,7 @@ class MediaContentController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		// DELETE -> /questions/id
-		mediacontent::find($id)->delete();
-		//return "you are on the delete page";
-		return redirect('mediacontent');
+		//
 	}
 
 }
