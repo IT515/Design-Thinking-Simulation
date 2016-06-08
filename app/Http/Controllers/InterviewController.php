@@ -18,7 +18,7 @@ class InterviewController extends Controller {
 	{
 		$current_day = Auth::user()->currentChapter;
 
-		$charVideos = $users = DB::table('characterVideo')->where('chapter', '=', $current_day)->get();
+		$charVideos = DB::table('characterVideo')->where('chapter', '=', $current_day)->get();
 		//dd($charVideos);
 		return view('interview', compact('charVideos'));
 	}

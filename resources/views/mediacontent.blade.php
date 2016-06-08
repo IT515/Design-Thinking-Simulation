@@ -81,7 +81,7 @@
                                 
                             </ul>
                             <!-- Form used to edit content -->
-                             <form class="form-horizontal" role="form" method="POST" action="mediacontent/{{$media->id}}/edit">
+                             <form class="form-horizontal" role="form" method="GET" action="mediacontent/{{$media->id}}/edit">
                                 <div class="form-group">
                                         <div class="col-sm-10">
                                             <input type="hidden" name="_token" value="{{ csrf_token() }}">

@@ -79,9 +79,9 @@ class MediaContentController extends Controller {
 	{
 		//// GET -> /images/id/edit
 		$MediaEdit = mediacontent::findorfail($id);
-
-
-		return view('mediacontent');
+		
+		//compact allows you to send a variable to a view
+		return view('mediacontent.edit', compact('MediaEdit'));
 	}
 
 	/**
@@ -94,8 +94,9 @@ class MediaContentController extends Controller {
 	{
 		// PUT/PATCH /images/id
 
-		echo mediacontent::find($id)->description;
-		return 'show specific media to update';
+		
+
+		return view('');
 	}
 
 	/**
