@@ -6,4 +6,8 @@ class mediacontent extends Model {
 
 	//
 
+protected $fillable = [
+	'description'
+];
+
 }

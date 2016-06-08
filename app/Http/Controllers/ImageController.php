@@ -1,13 +1,12 @@
 <?php namespace App\Http\Controllers;
 
-use App\mediacontent;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
-class MediaContentController extends Controller {
+class ImageController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
@@ -17,10 +16,7 @@ class MediaContentController extends Controller {
 	public function index()
 	{
 
-		$MediaContents = mediacontent::get()->all();
-
-
-		return view ('mediacontent', compact('MediaContents'));
+		return 'display all images';
 	}
 
 	/**
@@ -30,12 +26,7 @@ class MediaContentController extends Controller {
 	 */
 	public function create()
 	{
-		//mediacontent/create
-
-		
-
-		return 'create specific media';
-
+		//image/create
 	}
 
 	/**
@@ -43,18 +34,11 @@ class MediaContentController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store(Request $request)
+	public function store()
 	{
-		//  
+		//  POST /questions
 
-		$newMedia = new mediacontent([
-			'description' => $request ->get('description')
-
-			]);
-
-		$newMedia->save();
-
-		return redirect('mediacontent');
+		
 	}
 
 	/**
@@ -66,7 +50,7 @@ class MediaContentController extends Controller {
 	public function show($id)
 	{
 		// GET -> /questions/id
-		return 'show specific media1111' ;
+
 	}
 
 	/**
@@ -77,8 +61,7 @@ class MediaContentController extends Controller {
 	 */
 	public function edit($id)
 	{
-		//// GET -> /images/id/edit
-		return 'show specific media to edit';
+		// GET -> /images/id/edit
 	}
 
 	/**
@@ -90,7 +73,6 @@ class MediaContentController extends Controller {
 	public function update($id)
 	{
 		// PUT/PATCH /images/id
-		return 'show specific media to update';
 	}
 
 	/**
@@ -102,8 +84,6 @@ class MediaContentController extends Controller {
 	public function destroy($id)
 	{
 		// DELETE -> /questions/id
-
-		return  redirect('mediacontent');
 	}
 
 }

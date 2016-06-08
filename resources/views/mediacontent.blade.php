@@ -24,7 +24,26 @@
                     </a>
                 </div>
             @endforeach
-        </div>          
+        </div>  
+ <!-- Form -->
+
+        <div class="row">
+        <form class="form-horizontal" role="form" method="post" action="/mediacontent">
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="email">Upload Media:</label>
+                    <div class="col-sm-10">
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                        <input name="description" class="form-control" id="description" placeholder="please describe something" >
+                    </div>
+
+            </div>
+            <div class="form-group"> 
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>        
     </div>
 </section>
 
@@ -53,8 +72,8 @@
                             <img src="{{asset('images/cabin.png')}}" class="img-responsive img-centered" alt="">
                             <a href="https://americancustomcrawlers.com">Test test test</a><p>Just a bunch of text</p>
                             <ul class="list-inline item-details">
-                                <li>Client:
-                                    <strong> </strong>
+                                <li>Medai ID:
+                                    <strong>{{$media->id}}</strong>
                                 </li>
                                 <li>Date:
                                     <strong>April 2016</strong>
@@ -63,6 +82,19 @@
                                     <strong>Web Master</strong>
                                 </li>
                             </ul>
+                            <form class="form-horizontal" role="form" method="DELETE" action="mediacontent/{{$media->id}}">
+                                <div class="form-group">
+                                        <div class="col-sm-10">
+                                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                            <input type="hidden" name="_method" value="DELETE">
+                                        </div>
+                                </div>
+                                <div class="form-group"> 
+                                    <div class="col-sm-offset-2 col-sm-10">
+                                        <button type="submit" class="btn btn-default">Delete</button>
+                                    </div>
+                                </div>
+                            </form>
                             <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
                         </div>
                     </div>
