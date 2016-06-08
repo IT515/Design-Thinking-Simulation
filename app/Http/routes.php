@@ -26,3 +26,7 @@ Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
+
+//Route::get('mediacontent', 'MediaContentController@index');
+
+Route::resource('mediacontent', 'MediaContentController');
