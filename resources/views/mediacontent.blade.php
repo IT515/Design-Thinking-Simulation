@@ -28,12 +28,14 @@
 
  <!-- Add Media Form -->
         <div class="row">
-        <form class="form-horizontal" role="form" method="post" action="/mediacontent">
+        <form class="form-horizontal" role="form" method="post" action="{{URL::to('upload')}}" enctype="multipart/form-data">
             <div class="form-group">
                 <label class="control-label col-sm-2" for="email">Upload Media:</label>
                     <div class="col-sm-10">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                        <input name="description" class="form-control" id="description" placeholder="please describe something" >
+                        <input type="file" name="file" id="file">
+                        <input type="submit" name="submit" value="Upload">
+                        <!--<input name="description" class="form-control" id="description" placeholder="please describe something">-->
                     </div>
 
             </div>
@@ -72,6 +74,13 @@
                             <img src="{{asset('images/cabin.png')}}" class="img-responsive img-centered" alt="">
                             <a href="#">Test</a><p>Just a bunch of text</p>
                             <ul class="list-inline item-details">
+
+                            <!--Add an embeded Youtube Video -->
+                            <iframe width="420" height="315"
+                                src="http://www.youtube.com/embed/XGSy3_Czz8k?autoplay=1">
+                            </iframe>
+                            <!-- End of Embeded Youtube Video -->
+
                                 <li>Medai ID:
                                     <strong>{{$media->id}}</strong>
                                 </li>
