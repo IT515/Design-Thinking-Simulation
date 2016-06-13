@@ -34,3 +34,5 @@ Route::controllers([
 //Route::get('mediacontent', 'MediaContentController@index');
 
 Route::resource('mediacontent', 'MediaContentController');
+
+Route::post('upload', 'MediaContentController@upload');
