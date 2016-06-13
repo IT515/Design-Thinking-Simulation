@@ -1,13 +1,12 @@
 <?php namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
+
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
-class InterviewController extends Controller {
+class ImageController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
@@ -16,11 +15,8 @@ class InterviewController extends Controller {
 	 */
 	public function index()
 	{
-		$current_day = Auth::user()->currentChapter;
 
-		$charVideos = DB::table('characterVideo')->where('chapter', '=', $current_day)->get();
-		//dd($charVideos);
-		return view('interview', compact('charVideos'));
+		return 'display all images';
 	}
 
 	/**
@@ -30,7 +26,7 @@ class InterviewController extends Controller {
 	 */
 	public function create()
 	{
-		//
+		//image/create
 	}
 
 	/**
@@ -40,7 +36,9 @@ class InterviewController extends Controller {
 	 */
 	public function store()
 	{
-		//
+		//  POST /questions
+
+		
 	}
 
 	/**
@@ -51,7 +49,8 @@ class InterviewController extends Controller {
 	 */
 	public function show($id)
 	{
-		//
+		// GET -> /questions/id
+
 	}
 
 	/**
@@ -62,7 +61,7 @@ class InterviewController extends Controller {
 	 */
 	public function edit($id)
 	{
-		//
+		// GET -> /images/id/edit
 	}
 
 	/**
@@ -73,7 +72,7 @@ class InterviewController extends Controller {
 	 */
 	public function update($id)
 	{
-		//
+		// PUT/PATCH /images/id
 	}
 
 	/**
@@ -84,7 +83,7 @@ class InterviewController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		//
+		// DELETE -> /questions/id
 	}
 
 }

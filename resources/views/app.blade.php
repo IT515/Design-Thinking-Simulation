@@ -10,6 +10,7 @@
 
 	<!-- Fonts -->
 	<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -34,8 +35,13 @@
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
 					<li><a href="{{ url('/') }}">Home</a></li>
+
+					<li><a href="{{ url('/mediacontent') }}">Media</a></li>
+
+
 					<li><a href="#">Interview</a></li>
 					<li><a href="#">Gallery</a></li>
+
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right">
@@ -55,11 +61,13 @@
 		</div>
 	</nav>
 	<div class="container-fluid">
-		<div class="col-lg-2 col-md-3 col-sm-4">
-			@include('leftMenu')
-		</div>
-		<div class="col-lg-10 col-md-9 col-sm-8">
-			@yield('content')
+		<div class="row">
+			<div class="col-lg-2 col-md-3 col-sm-4">
+				@include('leftMenu')
+			</div>
+			<div class="col-lg-10 col-md-9 col-sm-8">
+				@yield('content')
+			</div>
 		</div>
 	</div>
 
