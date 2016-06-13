@@ -2,10 +2,21 @@
 
 use App\mediacontent;
 
+use Request;
+use Response;
+use \Input as Input;
+
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-use Illuminate\Http\Request;
+use Illuminate\Html\HtmlServiceProvider;
+use Illuminate\Support\Facades\Facade;
+
+use File;
+
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+
+//use Illuminate\Http\Request;
 
 class MediaContentController extends Controller {
 
@@ -38,6 +49,21 @@ class MediaContentController extends Controller {
 
 	}
 
+
+	public function upload()
+	{
+		$file = Input::File('file');
+		dd($file);
+		if (Input::hasFile('file')) {
+			echo "it worked";
+		}
+		else
+		{
+			echo "no file found";
+		}
+
+	}
+
 	/**
 	 * Store a newly created resource in storage.
 	 *
@@ -45,8 +71,16 @@ class MediaContentController extends Controller {
 	 */
 	public function store(Request $request)
 	{
-		//  
-
+		//dd($request);
+		//$request = Request::all();
+		$File = $_FILE['pic'];
+		dd($File);
+		if (Input::hasFile('pic')) {
+			return "uploaded";
+		}
+		else{
+			return "not worked";
+		}
 		$newMedia = new mediacontent([
 			'description' => $request ->get('description')
 
@@ -78,7 +112,10 @@ class MediaContentController extends Controller {
 	public function edit($id)
 	{
 		//// GET -> /images/id/edit
-		return 'show specific media to edit';
+		$MediaEdit = mediacontent::findorfail($id);
+
+		//compact allows you to send a variable to a view
+		return view('mediacontent.edit', compact('MediaEdit'));
 	}
 
 	/**
@@ -90,7 +127,10 @@ class MediaContentController extends Controller {
 	public function update($id)
 	{
 		// PUT/PATCH /images/id
-		return 'show specific media to update';
+
+		
+
+		return view('');
 	}
 
 	/**
@@ -102,8 +142,9 @@ class MediaContentController extends Controller {
 	public function destroy($id)
 	{
 		// DELETE -> /questions/id
-
-		return  redirect('mediacontent');
+		mediacontent::find($id)->delete();
+		//return "you are on the delete page";
+		return redirect('mediacontent');
 	}
 
 }
