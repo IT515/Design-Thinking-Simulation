@@ -16,14 +16,14 @@ class CreateOneItemsTable extends Migration {
 		{
 			$table->increments('id');
       $table->string('item');
-      $table->integer('character_id')->unsigned();
+      $table->integer('profession_id')->unsigned();
       $table->timestamp('created_at');
 		});
 
     Schema::table('one_items', function($table)
     {
-      $table->foreign('character_id')
-            ->references('id')->on('characters')
+      $table->foreign('profession_id')
+            ->references('id')->on('professions')
             ->onDelete('cascade');
     });
 
@@ -36,6 +36,7 @@ class CreateOneItemsTable extends Migration {
 	 */
 	public function down()
 	{
+    // $table->dropForeign('one_items_profession_id_foreign');
 		Schema::drop('one_items');
 	}
 

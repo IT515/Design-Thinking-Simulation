@@ -51,6 +51,11 @@ class CreatePlayerCharacterTable extends Migration {
 	 */
 	public function down()
 	{
+    // $table->dropForeign('player_character_user_id_foreign');
+    // $table->dropForeign('player_character_character_id_foreign');
+    // $table->dropForeign('player_character_skill_1_id_foreign');
+    // $table->dropForeign('player_character_skill_2_id_foreign');
+    // $table->dropForeign('player_character_one_items_id_foreign');
 		Schema::drop('player_character');
 	}
 
