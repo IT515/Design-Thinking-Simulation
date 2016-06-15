@@ -15,7 +15,7 @@ class PlayerCharacterController extends Controller
     $id = Auth::user()->id;
     $PlayerCharacter = PlayerCharacter::find($id);
     $CharacterName = $PlayerCharacter->character->name;
-    $temp = explode(' ', $CharacterName);
+      $temp = explode(' ', $CharacterName);
     $FirstName = array_shift($temp);
     $Gender = $PlayerCharacter->character->gender;
     $Age = $PlayerCharacter->character->age;
@@ -27,8 +27,6 @@ class PlayerCharacterController extends Controller
   public function postPlayerCharacter(Request $request)
   {
     $id = Auth::user()->id;
-
-    // $charVideos = DB::table('playerCharacterVideo')->where('chapter', '=', $current_day)->get();
 
     $PlayerCharacter = PlayerCharacter::firstOrCreate(['user_id' => $id]);
     $request->session()->put('playerCharacter', $PlayerCharacter);
@@ -81,7 +79,7 @@ class PlayerCharacterController extends Controller
           case 1:
               $rules = ['like' => 'required',
                         'dislike' => 'required',
-                        'skills' => 'array|size:2'];
+                        'skills' => 'array|size:2|required'];
               break;
           case 2:
               $rules = ['one_items_id' => 'required',
