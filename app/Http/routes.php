@@ -25,6 +25,7 @@ Route::group(['middleware' => 'auth'], function()
 
 	Route::resource('interview', 'InterviewController');
 	Route::resource('ideate', 'IdeateController');
+  // Route::resource('playerCharacter', 'playerCharacterController');
 });
 
 Route::controllers([
@@ -35,3 +36,10 @@ Route::controllers([
 //Route::get('mediacontent', 'MediaContentController@index');
 
 Route::resource('mediacontent', 'MediaContentController');
+
+//PlayerCharacter Routes
+Route::get('playerCharacter', 'PlayerCharacterController@getPlayerCharacter');
+Route::post('playerCharacter', 'PlayerCharacterController@postPlayerCharacter');
+Route::get('playerCharacter/step/{step}', 'PlayerCharacterController@getPlayerCharacterStep')->where(['step' => '[1-6]']);
+Route::post('playerCharacter/step/{step}', 'PlayerCharacterController@postPlayerCharacterStep')->where(['step' => '[1-6]']);
+Route::get('playerCharacter/done', 'PlayerCharacterController@getPlayerCharacterDone');

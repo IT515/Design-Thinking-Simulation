@@ -17,15 +17,17 @@ class CreatePlayerCharacterTable extends Migration {
 			$table->increments('id');
       $table->integer('user_id')->unsigned();
       $table->integer('character_id')->unsigned();
-      $table->integer('skill_1_id')->unsigned();
-      $table->integer('skill_2_id')->unsigned();
-      $table->integer('one_items_id')->unsigned();
-      $table->string('like');
-      $table->string('dislike');
-      $table->string('item_reason', 1000);
-      $table->string('reason_for_character', 1500);
-      $table->string('quote', 1000);
+      $table->integer('skill_1_id')->unsigned()->nullable();
+      $table->integer('skill_2_id')->unsigned()->nullable();
+      $table->integer('one_items_id')->unsigned()->nullable();
+      $table->string('like')->nullable();
+      $table->string('dislike')->nullable();
+      $table->string('item_reason', 1000)->nullable();
+      $table->string('reason_for_character', 1500)->nullable();
+      $table->string('quote', 1000)->nullable();
 			$table->timestamps();
+
+      $table->unique('user_id');
 		});
 
     Schema::table('player_character', function(Blueprint $table)

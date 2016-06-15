@@ -13,9 +13,9 @@ class AddSummaryMoreQuestionsColumnsForPlayerCharacterTable extends Migration
     public function up()
     {
         Schema::table('player_character', function (Blueprint $table) {
-          $table->string('biggest_camp_concern', 1500)->after('reason_for_profession');
-          $table->string('biggest_concern', 1500)->after('biggest_camp_concern');
-          $table->string('five_year_plan', 1500)->after('biggest_concern');
+          $table->string('biggest_camp_concern', 1500)->after('reason_for_profession')->nullable();
+          $table->string('biggest_concern', 1500)->after('biggest_camp_concern')->nullable();
+          $table->string('five_year_plan', 1500)->after('biggest_concern')->nullable();
         });
     }
 
