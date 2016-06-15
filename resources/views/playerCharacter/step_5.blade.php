@@ -7,9 +7,10 @@
 @include('errors.list')
 
 {!! Form::model($playerCharacter) !!}
-    {!! Form::label('like', 'Type a like') !!}<br>
-    {!! Form::text('like') !!}<br>
-    <button type="submit">Submit</button>
+  <p><b>In five years, I see myself:</b><p>
+    {!! Form::textarea('five_year_plan') !!}
+  <br>
+  <button type="submit">Continue</button>
 {!! Form::close() !!}
 
 @endsection

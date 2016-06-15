@@ -7,9 +7,10 @@
 @include('errors.list')
 
 {!! Form::model($playerCharacter) !!}
-    {!! Form::label('like', 'Type a like') !!}<br>
-    {!! Form::text('like') !!}<br>
-    <button type="submit">Submit</button>
+  <p><b>A quote I want to be remembered by is:</b><p>
+    {!! Form::textarea('quote') !!}
+  <br>
+  <button type="submit">Finish</button>
 {!! Form::close() !!}
 
 @endsection

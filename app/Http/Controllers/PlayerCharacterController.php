@@ -90,23 +90,27 @@ class PlayerCharacterController extends Controller
           case 3:
               $rules = ['reason_for_profession' => 'required'];
               break;
+          case 4:
+              $rules = ['biggest_camp_concern' => 'required',
+                        'biggest_concern' => 'required'];
+              break;
+          case 5:
+              $rules = ['five_year_plan' => 'required'];
+              break;
+          case 6:
+              $rules = ['quote' => 'required'];
+              break;
           default:
               abort(400, "No rules for this step!");
       }
 
       $this->validate($request, $rules);
 
-      switch ($step){
-        case 1:
+      if ($step == 1){
           $skillArray = $request->skills;
           $PlayerCharacter->skill_1_id = $skillArray[0];
           $PlayerCharacter->skill_2_id = $skillArray[1];
           $PlayerCharacter->save();
-          break;
-        // case 2:
-        //   $itemArray = $request->one_item;
-        //   $PlayerCharacter->one_item_id = $itemArray[0];
-        //   $PlayerCharacter->save();
       }
 
       $request->session()->get('playerCharacter')->update($request->all());
@@ -119,18 +123,7 @@ class PlayerCharacterController extends Controller
   }
   public function getPlayerCharacterDone()
   {
-      return '<h1>Thanks! You have completed the survey</h1>';
-  }
-  public function postPlayerCharacterStepOne(Request $request)
-  {
-      $this->validate($request, [
-          'like' => 'required'
-      ]);
-
-      $request->session()->get('playerCharacter')
-          ->update($request->only('like'))
-      ;
-
-      return $request->session()->get('playerCharacter');
+      // return '<h1>Congratulations! You have completed your character setup!</h1>';
+      return redirect()->action('WelcomeController@index');
   }
 }

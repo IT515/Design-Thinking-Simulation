@@ -31,6 +31,6 @@ class playerCharacter extends Model
     *
     * @var array
     */
-  protected $fillable = ['like', 'dislike', 'skill_1_id', 'skill_2_id', 'one_items_id', 'item_reason', 'reason_for_profession', 'biggest_camp_concern', 'biggest_concern', 'five_year_plan'];
+  protected $fillable = ['like', 'dislike', 'skill_1_id', 'skill_2_id', 'one_items_id', 'item_reason', 'reason_for_profession', 'biggest_camp_concern', 'biggest_concern', 'five_year_plan', 'quote'];
 
 }
