@@ -26,28 +26,22 @@
             {{--</form>--}}
         {{--</div>--}}
     </div>
-    <div class="row ideas">
+    <section class="ideas" id="pinBoot">
+
         @foreach($projectNames as $project)
-            <div class="col-lg-3">
-                <div class="panel panel-primary" onclick="thoughts({{ $project->id }})">
-                    <div class="panel-heading">{{ $project->projectName }}</div>
-                    <div class="panel-body">
-                        <div class="btn hvr-grow">{{ $groupName[0]->groupName }}</div>
-                    </div>
-                </div>
-            </div>
+            <article class="pin-panel" onclick="thoughts({{ $project->id }})">
+                <h4>{{ $project->projectName }}</h4>
+                <p>{{ $groupName[0]->groupName }}</p>
+            </article>
         @endforeach
 
-        <div class="col-lg-3">
-            <div class="panel panel-primary">
-                <div class="panel-heading">New project</div>
-                <div class="panel-body">
-                    <div class="text-center"><i class="fa fa-plus fa-4x white"></i></div>
-                </div>
-            </div>
-        </div>
+        <article class="pin-panel" onclick="thoughts({{ $project->id }})">
+            <h4>New Project</h4>
+            <p class="text-center"><i class="fa fa-plus fa-4x white"></i></p>
+        </article>
+    </section>
 
-    </div>
+
 
 
     <script>
@@ -77,35 +71,26 @@
                             "<input type='file' id='image' name='image'>" +
                             "<p class='help-block'>Upload an inspirational image.</p> " +
                             "</div><button type='button' class='btn btn-default' onclick='submitThought()'>Done</button> </form> " +
-                            "</div><br><br><br>");
+                            "</div><br><br><br>" +
+                            "<button class='btn btn-default' onclick='projects()'>Back to projects</button>");
 
             // Set the project depending on what the user selected
             project = projectId;
 
             var ideas = ideate.filter(function(project){ if (project.projectId == projectId) return project });
 
-            $(".ideas").empty().append("<div class='row'><button class='btn btn-default' onclick='projects()'>Back to projects</button></div>");
+            $(".ideas").empty().append("<button class='btn btn-default' onclick='projects()'>Back to projects</button>");
 
             ideas.forEach(function (idea) {
                 if(idea.title) {
-                    $(".ideas").append("<div class='col-lg-3'>" +
-                            "<div class='panel panel-primary'>" +
-                            "<div class='panel-heading'>" +
-                            idea.title +
-                            "</div>" +
-                            "<div class='panel-body'>" +
+                    $(".ideas").append("<article class='pin-panel'> " +
+                            "<h4>" + idea.title + "</h4>" +
                             "<p>" + idea.thought + "</p>" +
-                            "</div>" +
-                            "</div>" +
-                            "</div>");
+                            "</article>")
                 } else {
-                    $(".ideas").append("<div class='col-lg-3'>" +
-                            "<div class='panel panel-primary'>" +
-                            "<div class='panel-body'>" +
+                    $(".ideas").append("<article class='pin-panel'> " +
                             "<p>" + idea.thought + "</p>" +
-                            "</div>" +
-                            "</div>" +
-                            "</div>");
+                            "</article>");
                 }
             });
         }
@@ -122,22 +107,16 @@
             // Empty the ideas and fill it with projects
             $(".ideas").empty();
             projectInfo.forEach(function (project) {
-                $(".ideas").append('<div class="col-lg-3">' +
-                        '<div class="panel panel-primary" onclick="thoughts(' + project.id + ')">' +
-                        '<div class="panel-heading">' + project.projectName + '</div>' +
-                        '<div class="panel-body">' +
-                        '<div class="btn hvr-grow">' + groupName + '</div>' +
-                        '</div>' +
-                        '</div>' +
-                        '</div>')
+                $(".ideas").append('<article class="pin-panel" onclick="thoughts(' + project.id + ')" >' +
+                        '<h4>' + project.projectName + '</h4>' +
+                        '<p>' + groupName + '</p>' +
+                        '</article>');
             });
 
-            $(".ideas").append('<div class="col-lg-3">' +
-                    '<div class="panel panel-primary">' +
-                    '<div class="panel-heading">New project</div>' +
-                    '<div class="panel-body"><div class="text-center"><i class="fa fa-plus fa-4x white"></i></div></div>' +
-                    '</div>' +
-                    '</div>')
+            $(".ideas").append("<article class='pin-panel'> " +
+                    "<h4>New Project</h4>" +
+                    "<p class='text-center'><i class='fa fa-plus fa-4x white'></i></p>" +
+                    "</article>");
 
         }
 

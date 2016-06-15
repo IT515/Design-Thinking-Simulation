@@ -15,6 +15,10 @@ Route::get('/', 'WelcomeController@index');
 
 Route::get('home', 'HomeController@index');
 
+Route::get('test', function () {
+	return view('test');
+});
+
 Route::group(['middleware' => 'auth'], function()
 {
 	// Only authenticated users may enter...
