@@ -25,6 +25,6 @@ class User extends Authenticatable
     ];
 
     public function playerCharacter(){
-      return $this->hasOne('PlayerCharacter');
+      return $this->hasOne('App\PlayerCharacter');
     }
 }

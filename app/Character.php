@@ -8,7 +8,7 @@ class Character extends Model
 {
   // protected $table = 'characters';
   public function playerCharacters() {
-    return $this->hasMany('PlayerCharacter');
+    return $this->hasMany('App\PlayerCharacter');
   }
 
 }

@@ -7,9 +7,10 @@
 @include('errors.list')
 
 {!! Form::model($playerCharacter) !!}
-    {!! Form::label('like', 'Type a like') !!}<br>
-    {!! Form::text('like') !!}<br>
-    <button type="submit">Submit</button>
+  <p><b>The main reason I became a {{$profession}} is because:</b><p>
+    {!! Form::textarea('reason_for_profession') !!}
+  <br>
+  <button type="submit">Continue</button>
 {!! Form::close() !!}
 
 @endsection

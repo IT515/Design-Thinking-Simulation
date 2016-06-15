@@ -6,7 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class LikeDislike extends Model
 {
-    public function profession(){
-      return $this->belongsTo('Profession');
-    }
+  protected $table = 'like_dislike';
+
+  public function profession(){
+    return $this->belongsTo('App\Profession');
+  }
 }

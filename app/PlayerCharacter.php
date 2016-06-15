@@ -9,22 +9,22 @@ class playerCharacter extends Model
   protected $table = 'player_character';
 
   public function user() {
-    return $this->belongsTo('User');
+    return $this->belongsTo('App\User');
   }
   public function character() {
-    return $this->belongsTo('Character');
+    return $this->belongsTo('App\Character');
   }
   public function profession() {
-    return $this->belongsTo('Profession');
+    return $this->belongsTo('App\Profession');
   }
   public function skill_1() {
-    return $this->belongsTo('Skill', 'id','skill_1_id');
+    return $this->belongsTo('App\Skill', 'id','skill_1_id');
   }
   public function skill_2() {
-    return $this->belongsTo('Skill', 'id','skill_2_id');
+    return $this->belongsTo('App\Skill', 'id','skill_2_id');
   }
   public function one_item() {
-    return $this->belongsTo('OneItem');
+    return $this->belongsTo('App\OneItem');
   }
   /**
     * The attributes that are mass assignable.
