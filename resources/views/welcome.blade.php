@@ -47,7 +47,6 @@
 		<div class="container">
 			<div class="content">
 				<div class="title">Laravel 5</div>
-				<!-- <div class="quote">{{ Inspiring::quote() }}</div> -->
 
 				<!-- Button trigger modal -->
 				<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#LoginModal">
