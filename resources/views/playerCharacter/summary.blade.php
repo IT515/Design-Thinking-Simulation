@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="panel panel-primary">
-  <div class="panel-heading">Here is your Character Profile</div>
+  <div class="panel-heading">Here is your profile:</div>
   <div class="panel-body">
     <table class="table table-bordered">
       <tr>
@@ -57,7 +57,7 @@
         <td colspan="3"><pnsp>In five years, I see myself {{$playerCharacter->five_year_plan}}</pnsp></td>
       </tr>
       <tr>
-        <td colspan="3"><pnsp>The quote I want to be remembered by is {{$playerCharacter->quote}}</pnsp></td>
+        <td colspan="3"><pnsp>The quote I want to be remembered by is: "{{$playerCharacter->quote}}"</pnsp></td>
       </tr>
     </table>
   </div>
