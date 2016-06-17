@@ -114,10 +114,39 @@ class PlayerCharacterController extends Controller
       $request->session()->get('playerCharacter')->update($request->all());
 
       if ($step == $this->lastStep) {
-          return redirect()->action('PlayerCharacterController@getPlayerCharacterDone');
+          return redirect()->action('PlayerCharacterController@getPlayerCharacterSummary');
       }
 
       return redirect()->action('PlayerCharacterController@getPlayerCharacterStep', ['step' => $step+1]);
+  }
+  public function getPlayerCharacterSummary(){
+    $id = Auth::user()->id;
+    $PlayerCharacter = PlayerCharacter::find($id);
+    $character = $PlayerCharacter->character;
+    // $CharacterName = $PlayerCharacter->character->name;
+    // $Gender = $PlayerCharacter->character->gender;
+    // $Age = $PlayerCharacter->character->age;
+    // $MaritalStatus = $PlayerCharacter->character->marital_status;
+    $profession = $PlayerCharacter->profession->profession;
+    $likes = $PlayerCharacter->profession->like_dislikes->where('like_dislike', 'like');
+    $likeArray = [];
+    foreach ($likes as $like) {
+      $likeArray = array_merge($likeArray, [$like->like]);
+    }
+    $likeArray = array_merge($likeArray, [$PlayerCharacter->like]);
+    $dislikes = $PlayerCharacter->profession->like_dislikes->where('like_dislike', 'dislike');
+    $dislikeArray = [];
+    foreach ($dislikes as $dislike) {
+      $dislikeArray = array_merge($dislikeArray, [$dislike->like]);
+    }
+    $dislikeArray = array_merge($dislikeArray, [$PlayerCharacter->dislike]);
+    // $dislikes = array_merge($dislikes, $PlayerCharacter->dislike);
+    $skills = array_merge([$PlayerCharacter->skill_1->skill], [$PlayerCharacter->skill_2->skill]);
+    $one_item = $PlayerCharacter->one_item->item;
+
+
+    // return $PlayerCharacter;
+    return view('playerCharacter.summary', ['playerCharacter'=>$PlayerCharacter, 'character'=>$character, 'profession'=>$profession, 'likes'=>$likeArray, 'dislikes'=>$dislikeArray, 'skills'=>$skills, 'one_item'=>$one_item]);
   }
   public function getPlayerCharacterDone()
   {

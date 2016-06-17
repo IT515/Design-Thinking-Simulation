@@ -18,13 +18,13 @@ class playerCharacter extends Model
     return $this->belongsTo('App\Profession');
   }
   public function skill_1() {
-    return $this->belongsTo('App\Skill', 'id','skill_1_id');
+    return $this->belongsTo('App\Skill', 'skill_1_id');
   }
   public function skill_2() {
-    return $this->belongsTo('App\Skill', 'id','skill_2_id');
+    return $this->belongsTo('App\Skill', 'skill_2_id');
   }
   public function one_item() {
-    return $this->belongsTo('App\OneItem');
+    return $this->belongsTo('App\OneItem', 'one_items_id');
   }
   /**
     * The attributes that are mass assignable.
