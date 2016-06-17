@@ -33,9 +33,8 @@ Route::controllers([
 	'password' => 'Auth\PasswordController',
 ]);
 
-//Route::get('mediacontent', 'MediaContentController@index');
-
 Route::resource('mediacontent', 'MediaContentController');
+Route::post('upload', 'MediaContentController@upload');
 
 //PlayerCharacter Routes
 Route::get('playerCharacter', 'PlayerCharacterController@getPlayerCharacter');
