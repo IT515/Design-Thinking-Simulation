@@ -43,3 +43,4 @@ Route::post('playerCharacter', 'PlayerCharacterController@postPlayerCharacter');
 Route::get('playerCharacter/step/{step}', 'PlayerCharacterController@getPlayerCharacterStep')->where(['step' => '[1-6]']);
 Route::post('playerCharacter/step/{step}', 'PlayerCharacterController@postPlayerCharacterStep')->where(['step' => '[1-6]']);
 Route::get('playerCharacter/done', 'PlayerCharacterController@getPlayerCharacterDone');
+Route::get('playerCharacter/summary', 'PlayerCharacterController@getPlayerCharacterSummary');
