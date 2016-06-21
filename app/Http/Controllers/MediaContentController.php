@@ -1,20 +1,26 @@
 <?php namespace App\Http\Controllers;
 
 use App\mediacontent;
+use App\User;
 
-use Request;
+//use Request;
 use Response;
 use \Input as Input;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use \Auth as Auth;
 
 use Illuminate\Html\HtmlServiceProvider;
 use Illuminate\Support\Facades\Facade;
+use Illuminate\Http\Request;
 
 use File;
 
 use Symfony\Component\HttpFoundation\File\UploadedFile;
+
+use Image;
+use Html;
 
 //use Illuminate\Http\Request;
 
@@ -27,11 +33,11 @@ class MediaContentController extends Controller {
 	 */
 	public function index()
 	{
-
+		$Users = User::get()->all();
 		$MediaContents = mediacontent::get()->all();
 
 
-		return view ('mediacontent', compact('MediaContents'));
+		return view ('mediacontent', compact('MediaContents', 'Users'));
 	}
 
 	/**
@@ -49,13 +55,23 @@ class MediaContentController extends Controller {
 
 	}
 
-
+//Takes an given image and uploads it to the server.
 	public function upload()
 	{
-		$file = Input::File('file');
-		dd($file);
+		
 		if (Input::hasFile('file')) {
-			echo "it worked";
+			$file = Input::File('file');
+			$file->move('images', $file->getClientOriginalName());
+			echo '<img src="images/' . $file->getClientOriginalName() . ' " />';
+
+			/*
+			$image = \Image::make(\Input::File('file'));
+			$path = public_path().'/images/Test/';
+			$image->save($path.$file->getClientOriginalName());
+			$iamge->resize(900, 650);
+			$image->save($path.$file->getClientOriginalName());
+			*/
+
 		}
 		else
 		{
@@ -71,18 +87,29 @@ class MediaContentController extends Controller {
 	 */
 	public function store(Request $request)
 	{
-		//dd($request);
-		//$request = Request::all();
-		$File = $_FILE['pic'];
-		dd($File);
-		if (Input::hasFile('pic')) {
-			return "uploaded";
+		if (Input::hasFile('file')) {
+			$file = Input::File('file');
+			$file->move('images', $file->getClientOriginalName());
+
+			/*
+			$image = \Image::make(\Input::File('file'));
+			$path = public_path().'/images/Test/';
+			$image->save($path.$file->getClientOriginalName());
+			$iamge->resize(900, 650);
+			$image->save($path.$file->getClientOriginalName());
+			*/
+
 		}
-		else{
-			return "not worked";
+		else
+		{
+			dd("No file found, please go back and try again.");
 		}
+
 		$newMedia = new mediacontent([
-			'description' => $request ->get('description')
+			'userID' => Auth::user()->id,
+			'description' => $request ->get('description'),
+			'path' => $file->getClientOriginalName()
+			
 
 			]);
 

@@ -7,7 +7,9 @@ class mediacontent extends Model {
 	//
 
 protected $fillable = [
-	'description'
+	'userID',
+	'description',
+	'path'
 ];
 
 }
