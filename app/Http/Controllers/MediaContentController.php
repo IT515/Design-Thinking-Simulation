@@ -4,6 +4,7 @@ use App\mediacontent;
 
 use Request;
 use Response;
+use Image;
 use \Input as Input;
 
 use App\Http\Requests;
@@ -52,10 +53,14 @@ class MediaContentController extends Controller {
 
 	public function upload()
 	{
-		$file = Input::File('file');
-		dd($file);
+//		$file = Input::File('file');
+//		dd($file);
 		if (Input::hasFile('file')) {
-			echo "it worked";
+			$mainImg = Input::File('file');
+			$mainImgName = time().'.'.$mainImg->getClientOriginalExtension();
+			$mainImgPath = public_path('images/MediaContent/'.$mainImgName);
+			Image::make($mainImg->getRealPath())->save($mainImgPath);
+
 		}
 		else
 		{
@@ -73,20 +78,36 @@ class MediaContentController extends Controller {
 	{
 		//dd($request);
 		//$request = Request::all();
-		$File = $_FILE['pic'];
-		dd($File);
-		if (Input::hasFile('pic')) {
-			return "uploaded";
-		}
-		else{
-			return "not worked";
-		}
-		$newMedia = new mediacontent([
-			'description' => $request ->get('description')
 
+		//$file = Input::File('file');
+		if (Input::hasFile('file')) {
+			$mainImg = $request->file('mainImg');
+			$mainImgName = time().'.'.$mainImg->getClientOriginalExtension();
+			$mainImgPath = public_path('img/studyImg/'.$mainImgName);
+			Image::make($mainImg->getRealPath())->save($mainImgPath);
+			Media::create([
+				'studyId' => $studyId->id,
+				'type' => 'mainImg',
+				'path' => $mainImgName,
+				'alt' => $request->input('mainImg-Alt'),
+				'description' => $request->input('mainImg-Desc')
 			]);
 
-		$newMedia->save();
+		}
+//		$File = $_FILE['pic'];
+//		dd($File);
+//		if (Input::hasFile('pic')) {
+//			return "uploaded";
+//		}
+//		else{
+//			return "not worked";
+//		}
+//		$newMedia = new mediacontent([
+//			'description' => $request ->get('description')
+//
+//			]);
+//
+//		$newMedia->save();
 
 		return redirect('mediacontent');
 	}
