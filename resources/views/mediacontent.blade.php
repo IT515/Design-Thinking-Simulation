@@ -56,7 +56,7 @@
                     </div>
              
                     <div id="tab2" class="tab">
-                        <form class="form-horizontal" role="form" method="post" action="{{ URL::to('upload') }}" enctype="multipart/form-data">
+                        <form class="form-horizontal" role="form" method="post" action="/mediacontent" enctype="multipart/form-data">
                             <div class="form-group">
                                 <label class="control-label col-sm-2" for="email">Upload Video:</label>
                                     <div class="col-sm-10">
