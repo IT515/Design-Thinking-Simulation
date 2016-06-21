@@ -19,6 +19,8 @@ use File;
 
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 
+use \Image as Image;
+
 //use Illuminate\Http\Request;
 
 class MediaContentController extends Controller {
@@ -60,6 +62,15 @@ class MediaContentController extends Controller {
 			$file = Input::File('file');
 			$file->move('images', $file->getClientOriginalName());
 			echo '<img src="images/' . $file->getClientOriginalName() . ' " />';
+
+			/*
+			$image = \Image::make(\Input::File('file'));
+			$path = public_path().'/images/Test/';
+			$image->save($path.$file->getClientOriginalName());
+			$iamge->resize(900, 650);
+			$image->save($path.$file->getClientOriginalName());
+			*/
+
 		}
 		else
 		{
@@ -75,10 +86,28 @@ class MediaContentController extends Controller {
 	 */
 	public function store(Request $request)
 	{
-		//dd(Auth::id());
+		if (Input::hasFile('file')) {
+			$file = Input::File('file');
+			$file->move('images', $file->getClientOriginalName());
+
+			/*
+			$image = \Image::make(\Input::File('file'));
+			$path = public_path().'/images/Test/';
+			$image->save($path.$file->getClientOriginalName());
+			$iamge->resize(900, 650);
+			$image->save($path.$file->getClientOriginalName());
+			*/
+
+		}
+		else
+		{
+			dd("No file found, please go back and try again.");
+		}
+
 		$newMedia = new mediacontent([
 			'userID' => Auth::user()->id,
-			'description' => $request ->get('description')
+			'description' => $request ->get('description'),
+			'path' => $file->getClientOriginalName()
 			
 
 			]);

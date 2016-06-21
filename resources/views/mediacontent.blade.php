@@ -20,7 +20,7 @@
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="{{asset('images/cabin.png')}}" class="img-responsive" alt="">
+                        <img src="{{asset('images/'.$media->path)}}" class="img-responsive" alt="">
                     </a>
                 </div>
             @endforeach
@@ -58,7 +58,7 @@
                     <div id="tab2" class="tab">
                         <form class="form-horizontal" role="form" method="post" action="{{ URL::to('upload') }}" enctype="multipart/form-data">
                             <div class="form-group">
-                                <label class="control-label col-sm-2" for="email">Upload Image:</label>
+                                <label class="control-label col-sm-2" for="email">Upload Video:</label>
                                     <div class="col-sm-10">
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                         <input type="file" name="file" id="file">
@@ -67,16 +67,6 @@
 
                             </div>
                         </form>
-                    </div>
-             
-                    <div id="tab3" class="tab">
-                        <p>Tab #3 content goes here!</p>
-                        <p>Donec pulvinar neque sed semper lacinia. Curabitur lacinia ullamcorper nibh; quis imperdiet velit eleifend ac. Donec blandit mauris eget aliquet lacinia! Donec pulvinar massa interdum ri.</p>
-                    </div>
-             
-                    <div id="tab4" class="tab">
-                        <p>Tab #4 content goes here!</p>
-                        <p>Donec pulvinar neque sed semper lacinia. Curabitur lacinia ullamcorper nibh; quis imperdiet velit eleifend ac. Donec blandit mauris eget aliquet lacinia! Donec pulvinar massa interdum risus ornare mollis. In hac habitasse platea dictumst. Ut euismod tempus hendrerit. Morbi ut adipiscing nisi. Etiam rutrum sodales gravida! Aliquam tellus orci, iaculis vel.</p>
                     </div>
                 </div>
             </div>
@@ -116,7 +106,7 @@
                         <div class="modal-body">
                             <h2>Media {{$media->id}}</h2>
                             <hr class="star-primary">
-                            <img src="{{asset('images/cabin.png')}}" class="img-responsive img-centered" alt="">
+                            <img src="{{asset('images/'.$media->path)}}" class="img-responsive img-centered" alt="">
                             <a href="#">Test</a><p>Just a bunch of text</p>
                             <ul class="list-inline item-details">
 

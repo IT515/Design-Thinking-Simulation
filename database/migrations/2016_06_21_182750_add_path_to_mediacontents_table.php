@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddUserToMediacontentsTable extends Migration
+class AddPathToMediacontentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class AddUserToMediacontentsTable extends Migration
     public function up()
     {
         Schema::table('mediacontents', function (Blueprint $table) {
-            $table->string('user');
+            $table->string('path');
         });
     }
 
@@ -25,7 +25,7 @@ class AddUserToMediacontentsTable extends Migration
     public function down()
     {
         Schema::table('mediacontents', function (Blueprint $table) {
-            $table -> dropColumn('user');
+             $table -> dropColumn('path');
         });
     }
 }
