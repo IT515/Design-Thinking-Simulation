@@ -15,15 +15,15 @@ class CreateSkillsTable extends Migration {
 		Schema::create('skills', function(Blueprint $table)
 		{
 			$table->increments('id');
-      $table->integer('character_id')->unsigned();
+      $table->integer('profession_id')->unsigned();
       $table->string('skill');
       $table->timestamp('created_at');
 		});
 
     Schema::table('skills', function($table)
     {
-      $table->foreign('character_id')
-            ->references('id')->on('characters')
+      $table->foreign('profession_id')
+            ->references('id')->on('professions')
             ->onDelete('cascade');
     });
 	}
@@ -35,6 +35,7 @@ class CreateSkillsTable extends Migration {
 	 */
 	public function down()
 	{
+    // $table->dropForeign('skills_profession_id_foreign');
 		Schema::drop('skills');
 	}
 

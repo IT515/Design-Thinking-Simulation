@@ -19,7 +19,8 @@ use File;
 
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 
-use \Image as Image;
+use Image;
+use Html;
 
 //use Illuminate\Http\Request;
 

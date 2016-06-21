@@ -15,7 +15,7 @@ class CreateLikeDislikeTable extends Migration {
 		Schema::create('like_dislike', function(Blueprint $table)
 		{
 			$table->increments('id');
-      $table->integer('character_id')->unsigned();
+      $table->integer('profession_id')->unsigned();
       $table->string('like');
       $table->string('like_dislike');
 			$table->timestamp('created_at');
@@ -23,8 +23,8 @@ class CreateLikeDislikeTable extends Migration {
 
     Schema::table('like_dislike', function($table)
     {
-      $table->foreign('character_id')
-            ->references('id')->on('characters')
+      $table->foreign('profession_id')
+            ->references('id')->on('professions')
             ->onDelete('cascade');
     });
 	}
@@ -36,6 +36,7 @@ class CreateLikeDislikeTable extends Migration {
 	 */
 	public function down()
 	{
+    // $table->dropForeign('like_dislike_profession_id_foreign');
 		Schema::drop('like_dislike');
 	}
 

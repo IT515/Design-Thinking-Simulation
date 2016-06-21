@@ -203,7 +203,6 @@
 	<header>
 		<div class="menu">
 			<ul role="navigation">
->>>>>>> 1651d59a8a5aab4895ca9107ef7343ed09c55a90
 				<a href="/auth/login">Login</a>
 				<div id="separator"> / </div>
 				<a href="/auth/register">Register</a>
@@ -220,7 +219,7 @@
 	<div id="page container-fluid">
 		<div class="row">
 			<div class="about col-xs-offset-2 col-xs-8 col-md-8 col-md-offset-1">
-				<!--<div class="container">
+				<div class="container">
 					<div class="panel-group">
 						<div class="panel panel-default">
 							<div class="panel-heading">
@@ -229,14 +228,14 @@
 								</h4>
 							</div>
 							<div id="collapse1" class="panel-collapse collapse">
-								<div class="panel-body">-->
+								<div class="panel-body">
 									<p class="paragraph-heading">The Challenge</p>
 									<p class="paragraph-content">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-								<!--</div>
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>-->
+				</div>
 			</div>
 		</div>
 		<div class="row">
@@ -250,6 +249,6 @@
 				<button id="button">Start the Simulation</button>
 			</div>
 		</div>
-	</div>
-</body> -->
+	</div> -->
+</body>
 </html>

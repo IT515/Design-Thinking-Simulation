@@ -1082,6 +1082,9 @@ h6,
 p {
   margin: 0 0 10px;
 }
+pnsp {
+  margin: 0 0 0px;
+}
 .lead {
   margin-bottom: 20px;
   font-size: 16px;
@@ -8402,10 +8405,12 @@ button.close {
 body {
   overflow-x: hidden;
 }
-p {
+p,
+pnsp {
   font-size: 20px;
 }
-p.small {
+p.small,
+pnsp.small {
   font-size: 16px;
 }
 a,
